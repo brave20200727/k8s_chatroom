@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: redis-commander
+  labels:
+    app: redis-commander
+spec:
+  containers:
+  - name: redis-commander
+    image: rediscommander/redis-commander:latest
+    ports: 
+    - name: rc-port
+      containerPort: 8081
+    env:
+    - name: REDIS_HOSTS
+      value: redis-service

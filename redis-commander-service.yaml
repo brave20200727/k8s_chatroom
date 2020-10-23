@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-commander-service
+spec:
+  ports:
+  - port: 8081
+    protocol: TCP
+    targetPort: rc-port
+  selector:
+    app: redis-commander
+  type: NodePort
